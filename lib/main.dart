@@ -24,7 +24,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Home Hub',
       theme: ThemeData(
-        textTheme: GoogleFonts.robotoTextTheme(),
+        textTheme: GoogleFonts.interTextTheme(),
+        scaffoldBackgroundColor: Colors.white,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
       ),
       debugShowCheckedModeBanner: false,
       home: const Walkthrough(),

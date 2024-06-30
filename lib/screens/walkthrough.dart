@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import 'login.dart';
@@ -12,7 +13,6 @@ class Walkthrough extends StatefulWidget {
 
 class _WalkthroughState extends State<Walkthrough> {
   int currentIndex = 0;
-  final controller = PageController(viewportFraction: 0.8, keepPage: true);
 
   List info = [
     {
@@ -40,8 +40,8 @@ class _WalkthroughState extends State<Walkthrough> {
           });
         },
         child: Container(
-          width: 10,
-          height: 10,
+          width: 10.w,
+          height: 10.h,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: currentIndex == index ? Colors.black : Colors.white,
@@ -53,8 +53,9 @@ class _WalkthroughState extends State<Walkthrough> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
+        backgroundColor: Colors.white,
         title: SizedBox(
-          width: 50,
+          width: 50.w,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: indicators,
@@ -62,7 +63,7 @@ class _WalkthroughState extends State<Walkthrough> {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 20),
+            padding: EdgeInsets.only(right: 20.w),
             child: GestureDetector(
               onTap: () {
                 if (currentIndex == 2) {
@@ -74,8 +75,7 @@ class _WalkthroughState extends State<Walkthrough> {
                       },
                     ),
                   );
-                }
-                else{
+                } else {
                   setState(() {
                     currentIndex++;
                   });
@@ -93,14 +93,14 @@ class _WalkthroughState extends State<Walkthrough> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
               width: double.infinity,
-              height: 400,
+              height: 250.h,
               child: Image.asset(
                 info[currentIndex]['asset'],
               ),
@@ -112,8 +112,8 @@ class _WalkthroughState extends State<Walkthrough> {
                 fontSize: 34,
               ),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 20.h,
             ),
             const Text(
               'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts.',
@@ -123,11 +123,11 @@ class _WalkthroughState extends State<Walkthrough> {
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(
-              height: 40,
+            SizedBox(
+              height: 40.h,
             ),
             SizedBox(
-              height: 50,
+              height: 50.h,
               width: double.infinity,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
